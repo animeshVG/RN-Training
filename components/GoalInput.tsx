@@ -1,0 +1,64 @@
+import { StyleSheet, View, TextInput, Button, Modal, Image} from 'react-native'
+import { useState } from 'react';
+import React from 'react'
+
+const GoalInput = (props) => {
+    const [change, setChange] = useState("");
+    const goalInput = (event) => {
+        setChange(event);
+    }
+
+    const addGoalHandler = () => {
+        props.OnAddGoal(change);
+        setChange("");
+    }
+
+    return (
+        <Modal visible={props.visible} animationType='slide'>
+            <View style={styles.inputContainer}>
+                <Image style={{margin:20}} source={require("../assets/favicon.png")}/>
+                <TextInput onChangeText={goalInput} style={styles.textInput} placeholder='Your Course Goal' />
+                <View style={styles.buttonContainer}>
+                    <View style={styles.button}>
+                        <Button onPress={addGoalHandler} title='Add Goal' color={"#b180f0"} />
+                    </View>
+                    <View style={styles.button}>
+                        <Button title='Cancel' onPress={props.onCancle} color={"#f31282"}/>
+                    </View>
+                </View>
+            </View>
+        </Modal>
+    )
+}
+
+export default GoalInput
+
+const styles = StyleSheet.create({
+    inputContainer: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        // marginBottom: 24,
+        padding:16,
+        backgroundColor:"#311b6b"
+    },
+    textInput: {
+        borderWidth: 1,
+        borderColor: "#e4d0ff",
+        width: "85%",
+        // marginRight: 8,
+        padding: 8,
+        backgroundColor:"#e4d0ff",
+        color:"black",
+        borderRadius:6
+    },
+    buttonContainer: {
+        marginTop:16,
+        flexDirection: "row",
+
+    },
+    button:{
+        width:"30%",
+        marginHorizontal:8
+    }
+})
