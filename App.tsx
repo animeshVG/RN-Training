@@ -5,8 +5,13 @@ import GoalItem from './components/GoalItem'
 import GoalInput from './components/GoalInput'
 
 const App = () => {
+  const [modalIsVisible, setmodalIsVisible] = useState(false);
   const [goals, setGoals] = useState([]);
 
+
+const startAddGoalHandler=()=>{
+  setmodalIsVisible(true);
+}
 
   const adGoal = (change) => {
     setGoals(currentGoals => [...currentGoals, { text: change, id: Math.random().toString() }]);
@@ -22,7 +27,8 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <GoalInput OnAddGoal={adGoal} />
+      <Button title='Add New Goal' color="#5e0acc" onPress={startAddGoalHandler}/>
+      {modalIsVisible && <GoalInput visible={modalIsVisible} OnAddGoal={adGoal} />}
       {/* <View style={styles.inputContainer}>
         <TextInput onChangeText={goalInput} style={styles.textInput} placeholder='Your Course Goal' />
         <Button onPress={adGoal} title='Add Goal' />

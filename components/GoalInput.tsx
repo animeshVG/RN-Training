@@ -1,4 +1,4 @@
-import { StyleSheet, View, TextInput, Button } from 'react-native'
+import { StyleSheet, View, TextInput, Button, Modal } from 'react-native'
 import { useState } from 'react';
 import React from 'react'
 
@@ -14,10 +14,12 @@ const GoalInput = (props) => {
     }
 
     return (
+        <Modal visible={props.visible} animationType='slide'>
         <View style={styles.inputContainer}>
             <TextInput onChangeText={goalInput} style={styles.textInput} placeholder='Your Course Goal' />
             <Button onPress={addGoalHandler} title='Add Goal' />
         </View>
+        </Modal>
     )
 }
 
