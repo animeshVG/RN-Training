@@ -9,26 +9,31 @@ const App = () => {
   const [goals, setGoals] = useState([]);
 
 
-const startAddGoalHandler=()=>{
-  setmodalIsVisible(true);
-}
+  const startAddGoalHandler = () => {
+    setmodalIsVisible(true);
+  }
+
+  function endAddGoalHandler() {
+    setmodalIsVisible(false)
+  }
 
   const adGoal = (change) => {
     setGoals(currentGoals => [...currentGoals, { text: change, id: Math.random().toString() }]);
+    endAddGoalHandler();
   }
 
 
-  const deleteGoalHandler=(id)=>{
-    setGoals(currentGoals=> {
-      return currentGoals.filter((goals)=> goals.id !== id);
+  const deleteGoalHandler = (id) => {
+    setGoals(currentGoals => {
+      return currentGoals.filter((goals) => goals.id !== id);
     });
-    
+
   }
 
   return (
     <View style={styles.container}>
-      <Button title='Add New Goal' color="#5e0acc" onPress={startAddGoalHandler}/>
-      {modalIsVisible && <GoalInput visible={modalIsVisible} OnAddGoal={adGoal} />}
+      <Button title='Add New Goal' color="#5e0acc" onPress={startAddGoalHandler} />
+      <GoalInput visible={modalIsVisible} OnAddGoal={adGoal} onCancle={endAddGoalHandler} />
       {/* <View style={styles.inputContainer}>
         <TextInput onChangeText={goalInput} style={styles.textInput} placeholder='Your Course Goal' />
         <Button onPress={adGoal} title='Add Goal' />
