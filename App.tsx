@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList} from 'react-native'
 import React from 'react'
 import { useState } from 'react'
 import GoalItem from './components/GoalItem'
@@ -66,7 +66,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 50,
-    paddingHorizontal: 16
+    paddingHorizontal: 16,
+    backgroundColor:"#1e085a"
   },
   goalsContainer: {
     flex: 4
