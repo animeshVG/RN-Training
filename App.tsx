@@ -10,7 +10,7 @@ const App = () => {
   }
 
   const adGoal = () => {
-    setGoals(currentGoals => [...currentGoals, change]);
+    setGoals(currentGoals => [...currentGoals, {text: change, key: Math.random().toString()}]);
   }
 
 
@@ -23,7 +23,7 @@ const App = () => {
       <View style={styles.goalsContainer}>
         <FlatList data={goals} renderItem={itemData => {
           return (
-            <View style={styles.goalItem}><Text style={{ color: "white" }}>{itemData.item}</Text></View>
+            <View style={styles.goalItem}><Text style={{ color: "white" }}>{itemData.item.text}</Text></View>
           )
         }} />
         {/* <ScrollView alwaysBounceVertical={false}>
