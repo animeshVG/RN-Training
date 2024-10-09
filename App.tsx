@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput, Button, ScrollView } from 'react-native'
+import { StyleSheet, Text, View, TextInput, Button, ScrollView, FlatList } from 'react-native'
 import React from 'react'
 import { useState } from 'react'
 
@@ -21,13 +21,18 @@ const App = () => {
         <Button onPress={adGoal} title='Add Goal' />
       </View>
       <View style={styles.goalsContainer}>
-      <ScrollView alwaysBounceVertical={false}>
+        <FlatList data={goals} renderItem={itemData => {
+          return (
+            <View style={styles.goalItem}><Text style={{ color: "white" }}>{itemData.item}</Text></View>
+          )
+        }} />
+        {/* <ScrollView alwaysBounceVertical={false}>
         {
           goals.map((goal) =>
           ((<View style={styles.goalItem} key={goal}><Text style={{ color: "white" }}>{goal}</Text></View>)
           ))
         }
-      </ScrollView>
+      </ScrollView> */}
       </View>
     </View>
   )
