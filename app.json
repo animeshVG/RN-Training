@@ -18,16 +18,10 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      },
-      "package": "com.animeshhh.RNTraining"
+      }
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "b5151a3e-2bee-4c46-b9ad-d961a8f20d0d"
-      }
     }
   }
 }
