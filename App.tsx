@@ -4,9 +4,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 import { useFonts } from 'expo-font';
 import AppLoading from 'expo-app-loading';
 
-import StartGameScreen from './screens/StartGameScreen';
-import GameScreen from './screens/GameScreen';
-import GameOverScreen from './screens/GameOverScreen';
+import StartGameScreen from './Screens/StartGameScreen';
+import GameScreen from './Screens/GameScreen';
+import GameOverScreen from './Screens/GameOverScreen';
 import Colors from './constants/colors';
 
 export default function App() {

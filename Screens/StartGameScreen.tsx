@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { TextInput, View, StyleSheet, Alert } from 'react-native';
 
-import PrimaryButton from '../components/ui/PrimaryButton';
-import Title from '../components/ui/Title';
+import PrimaryButton from '../Components/ui/PrimaryButton';
+import Title from '../Components/ui/Title';
 import Colors from '../constants/colors';
-import Card from '../components/ui/Card';
-import InstructionText from '../components/ui/InstructionText';
+import Card from '../Components/ui/Card';
+import InstructionText from '../Components/ui/InstructionText';
 
 function StartGameScreen({ onPickNumber }) {
   const [enteredNumber, setEnteredNumber] = useState('');

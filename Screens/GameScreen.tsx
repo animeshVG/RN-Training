@@ -2,12 +2,12 @@ import { useState, useEffect } from 'react';
 import { View, StyleSheet, Alert, Text, FlatList } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 
-import NumberContainer from '../components/game/NumberContainer';
-import Card from '../components/ui/Card';
-import InstructionText from '../components/ui/InstructionText';
-import PrimaryButton from '../components/ui/PrimaryButton';
-import Title from '../components/ui/Title';
-import GuessLogItem from '../components/game/GuessLogItem';
+import NumberContainer from '../Components/game/NumberContainer';
+import Card from '../Components/ui/Card';
+import InstructionText from '../Components/ui/InstructionText';
+import PrimaryButton from '../Components/ui/PrimaryButton';
+import Title from '../Components/ui/Title';
+import GuessLogItem from '../Components/game/GuessLogItem';
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
