@@ -46,7 +46,6 @@ function GameScreen({ userNumber, onGameOver }) {
   }, []);
 
   function nextGuessHandler(direction) {
-    // direction => 'lower', 'greater'
     if (
       (direction === 'lower' && currentGuess < userNumber) ||
       (direction === 'greater' && currentGuess > userNumber)
@@ -84,12 +83,12 @@ function GameScreen({ userNumber, onGameOver }) {
         <View style={styles.buttonsContainer}>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'lower')}>
-              <Ionicons name="md-remove" size={24} color="white" />
+              <Ionicons name="remove" size={24} color="white" />
             </PrimaryButton>
           </View>
           <View style={styles.buttonContainer}>
             <PrimaryButton onPress={nextGuessHandler.bind(this, 'greater')}>
-              <Ionicons name="md-add" size={24} color="white" />
+              <Ionicons name="add" size={24} color="white" />
             </PrimaryButton>
           </View>
         </View>
@@ -145,6 +144,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 24,
     alignItems: 'center',
+    marginTop:50
   },
   instructionText: {
     marginBottom: 12,
