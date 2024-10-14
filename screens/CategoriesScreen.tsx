@@ -30,4 +30,4 @@ function CategoriesScreen({ navigation }) {
   );
 }
 
-export default CategoriesScreen;
+export default CategoriesScreen
